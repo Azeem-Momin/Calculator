@@ -1,0 +1,156 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Calculator */
+.calculator {
+    width: 320px;
+    background-color: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+/* Display styles */
+.display {
+    padding: 15px;
+    text-align: right;
+    font-size: 1.5rem; 
+    background-color: #333;
+    color: white;
+    border-bottom: 1px solid #555;
+    overflow: hidden; /* Hide content if it overflows */
+    word-wrap: break-word; /* Allow breaking into the next line */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Buttons grid layout to make button element align in grid structure*/
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+
+/* Button styles */
+.button {
+    font-size: 1.2rem; 
+    padding: 10px;
+    text-align: center;
+    /* border: none; */
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Zero button spans across two columns */
+.button.zero {
+    grid-column: span 2;
+}
+
+/* Operator button styles */
+.button.operator {
+    background-color: #f08c35;
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #555;
+}
+
+
+/* For very small screens */
+@media (max-width: 300px) {
+    .calculator {
+        width: 260px; /* Reduce the width of the calculator */
+        padding: 8px;
+    }
+
+    .display {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        padding: 12px; /* Reduce padding */
+    }
+
+    .buttons {
+        gap: 3px; /* Reduce the gap between buttons */
+    }
+
+    .button {
+        font-size: 1rem; /* Further reduce the font size for very small screens */
+        padding: 8px; /* Reduce padding for buttons */
+    }
+
+    .button.zero {
+        grid-column: span 2;
+    }
+}
+
+/* For extremely small screens */
+@media (max-width: 210px) {
+    .calculator {
+        width: 200px; /* Further reduce the width */
+        padding: 5px; /* Reduce the padding */
+    }
+
+    .display {
+        font-size: 1rem; /* Make the font smaller */
+        padding: 8px; /* Smaller padding */
+    }
+
+    .buttons {
+        gap: 2px; /* Further reduce the gap between buttons */
+    }
+
+    .button {
+        font-size: 0.9rem; /* Smaller font size for tiny screens */
+        padding: 6px; /* Reduce padding further */
+    }
+
+    .button.zero {
+        grid-column: span 2;
+    }
+}
+
+
+/* For extremely small screens (<= 185px) */
+@media (max-width: 185px) {
+    .calculator {
+        width: 180px; /* Further reduce the width */
+        padding: 4px; /* Minimize padding */
+    }
+
+    .display {
+        font-size: 0.9rem; /* Adjust font size for better fit */
+        padding: 6px; /* Smaller padding */
+    }
+
+    .buttons {
+        gap: 1px; /* Minimize the gap between buttons */
+    }
+
+    .button {
+        font-size: 0.8rem; /* Reduce font size for buttons */
+        padding: 4px; /* Smaller padding for buttons */
+    }
+
+    .button.zero {
+        grid-column: span 2; /* Ensure it spans two columns */
+    }
+}
